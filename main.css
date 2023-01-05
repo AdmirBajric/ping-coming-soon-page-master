@@ -192,3 +192,12 @@ body {
   font-size: 1.5rem;
   color: var(--lightRed);
 }
+
+.input-section,
+.illustration-section {
+  display: none;
+}
+
+.social-share a span {
+  display: none;
+}
