@@ -1,0 +1,42 @@
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
+
+  #header {
+    margin-top: 30rem;
+  }
+
+  #header img {
+    width: 56px;
+    height: 16px;
+  }
+
+  .form {
+    flex-direction: column;
+    width: 65%;
+  }
+
+  .form input {
+    padding: 3.2rem;
+  }
+
+  .form button {
+    margin-top: 2rem;
+    width: 70%;
+    padding: 3.2rem;
+  }
+
+  .error {
+    width: 40%;
+    margin-top: 2rem;
+  }
+
+  .illustration {
+    margin-top: 25rem;
+  }
+
+  #footer {
+    width: 40%;
+  }
+}

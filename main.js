@@ -1,6 +1,7 @@
 const submit = document.querySelector(".form button");
 const input = document.querySelector(".form input");
-const error = document.getElementById("error");
+const error = document.querySelectorAll(".error");
+const [mobileErr, desktopErr] = error;
 
 submit.addEventListener("click", (e) => {
   if (check(input)) {
@@ -19,15 +20,29 @@ const validateEmail = (inputText) => {
 };
 
 const check = (inputTxt) => {
+  let err;
+  if (window.innerWidth <= 600) {
+    err = mobileErr;
+  } else {
+    err = desktopErr;
+  }
+
   if (!validateEmail(inputTxt)) {
-    error.style.display = "flex";
-    error.innerHTML = `<p>Please provide a valid email address</p>`;
+    err.style.display = "flex";
+    err.innerHTML = `<p>Please provide a valid email address</p>`;
     inputTxt.style.border = "1px solid #ff5263";
     return false;
   } else {
-    error.style.display = "none";
-    error.innerHTML = ``;
+    err.style.display = "none";
+    err.innerHTML = ``;
     inputTxt.style.border = "1px solid #c2d3ff";
     return true;
   }
 };
+
+window.addEventListener("resize", () => {
+  input.value = "";
+  mobileErr.innerHTML = "";
+  desktopErr.innerHTML = "";
+  input.style.border = "1px solid #c2d3ff";
+});
