@@ -4,6 +4,7 @@ const error = document.getElementById("error");
 
 submit.addEventListener("click", (e) => {
   if (check(input)) {
+    input.value = "";
     alert("Thank you for Subscribing!");
   }
 });
